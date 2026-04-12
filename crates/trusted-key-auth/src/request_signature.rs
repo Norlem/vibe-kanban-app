@@ -14,6 +14,13 @@ pub const SIGNATURE_HEADER: &str = "x-vk-signature";
 pub const TIMESTAMP_HEADER: &str = "x-vk-timestamp";
 pub const MAX_TIMESTAMP_DRIFT_SECONDS: i64 = 30;
 
+fn max_timestamp_drift_seconds() -> i64 {
+    std::env::var("VK_RELAY_SIGNATURE_MAX_DRIFT_SECS")
+        .ok()
+        .and_then(|v| v.parse::<i64>().ok())
+        .unwrap_or(MAX_TIMESTAMP_DRIFT_SECONDS)
+}
+
 #[derive(Debug, Clone, Copy)]
 pub struct VerifiedRequestSignature {
     pub timestamp: i64,
@@ -58,7 +65,7 @@ pub async fn verify_trusted_ed25519_signature(
             timestamp,
             now,
             drift_seconds,
-            max_drift_seconds: MAX_TIMESTAMP_DRIFT_SECONDS,
+            max_drift_seconds: max_timestamp_drift_seconds(),
         });
     }
 
@@ -122,7 +129,7 @@ fn required_header<'a>(headers: &'a HeaderMap, name: &'static str) -> Option<&'a
 
 fn timestamp_is_within_drift(timestamp: i64, now: i64) -> bool {
     let drift = now.saturating_sub(timestamp).abs();
-    drift <= MAX_TIMESTAMP_DRIFT_SECONDS
+    drift <= max_timestamp_drift_seconds()
 }
 
 fn current_unix_timestamp() -> Result<i64, SignatureVerificationError> {
