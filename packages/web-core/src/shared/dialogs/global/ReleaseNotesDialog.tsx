@@ -12,7 +12,7 @@ import { defineModal, type NoProps } from '@/shared/lib/modals';
 import { useReleases } from '@/shared/hooks/useReleases';
 import { SimpleMarkdown } from '@/shared/components/SimpleMarkdown';
 
-const GITHUB_RELEASES_URL = 'https://github.com/BloopAI/vibe-kanban/releases';
+const GITHUB_RELEASES_URL = '';
 
 function formatDate(dateStr: string): string {
   try {
@@ -64,7 +64,7 @@ const ReleaseNotesDialogImpl = create<NoProps>(() => {
               <p className="text-sm text-low">Unable to load release notes.</p>
               <Button variant="outline" size="sm" onClick={handleOpenInBrowser}>
                 <ExternalLink className="h-3.5 w-3.5 mr-1.5" />
-                View on GitHub
+                View releases
               </Button>
             </div>
           )}
@@ -92,7 +92,7 @@ const ReleaseNotesDialogImpl = create<NoProps>(() => {
         <DialogFooter className="px-6 py-3 border-t flex-shrink-0">
           <Button variant="outline" size="sm" onClick={handleOpenInBrowser}>
             <ExternalLink className="h-3.5 w-3.5 mr-1.5" />
-            Open on GitHub
+            View all releases
           </Button>
         </DialogFooter>
       </DialogContent>

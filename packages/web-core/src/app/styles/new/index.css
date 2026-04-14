@@ -74,10 +74,10 @@ html {
     );
     --bg-panel: var(--vscode-input-background, var(--_bg-panel-default));
 
-    /* Accent (light) */
-    --brand: 25 82% 54%;
-    --brand-hover: 25 75% 62%;
-    --brand-secondary: 25 82% 37%;
+    /* Accent (light) — Norlem green */
+    --brand: 124 38% 45%;
+    --brand-hover: 124 33% 55%;
+    --brand-secondary: 124 38% 32%;
     --error: 0 59% 57%;
     --success: 117 38% 50%;
     --merged: 271 81% 46%;
@@ -133,10 +133,10 @@ html {
     );
     --bg-panel: var(--vscode-input-background, var(--_bg-panel-default));
 
-    /* Accent (dark) */
-    --brand: 25 82% 54%;
-    --brand-hover: 25 75% 62%;
-    --brand-secondary: 25 82% 37%;
+    /* Accent (dark) — Norlem green */
+    --brand: 124 38% 45%;
+    --brand-hover: 124 33% 55%;
+    --brand-secondary: 124 38% 32%;
     --error: 0 59% 57%;
     --success: 117 38% 50%;
     --merged: 271 81% 66%;

@@ -11,11 +11,7 @@
     "check": "tsc --noEmit -p tsconfig.json"
   },
   "keywords": [],
-  "author": "bloop",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/BloopAI/vibe-kanban"
-  },
+  "author": "Norlem Technology Consulting",
   "engines": {
     "node": ">=20.19.0"
   },
