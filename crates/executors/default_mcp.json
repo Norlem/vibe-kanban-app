@@ -78,7 +78,7 @@
     "dev_manager": {
       "name": "Dev Manager",
       "description": "Launch and manage multiple dev servers in parallel with automatic port allocation",
-      "url": "https://github.com/BloopAI/dev-manager-mcp",
+      "url": "https://github.com/Norlem/dev-manager-mcp",
       "icon": "mcp/dev_manager_logo.svg"
     }
   }
