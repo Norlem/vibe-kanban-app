@@ -7,7 +7,7 @@ import {
 } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useLocation, useNavigate, useParams } from "@tanstack/react-router";
-import { siGithub } from "simple-icons";
+
 import { AppBar, type AppBarHostStatus } from "@vibe/ui/components/AppBar";
 import { XIcon, PlusIcon, HouseIcon, KanbanIcon } from "@phosphor-icons/react";
 import { MobileDrawer } from "@vibe/ui/components/MobileDrawer";
@@ -17,7 +17,7 @@ import { cn } from "@/shared/lib/utils";
 import { useUserOrganizations } from "@/shared/hooks/useUserOrganizations";
 import { useAuth } from "@/shared/hooks/auth/useAuth";
 import { useOrganizationStore } from "@/shared/stores/useOrganizationStore";
-import { useGitHubStars } from "@/shared/hooks/useGitHubStars";
+
 import { AppBarNotificationBellContainer } from "@/pages/workspaces/AppBarNotificationBellContainer";
 import { SettingsDialog } from "@/shared/dialogs/settings/SettingsDialog";
 import { CommandBarDialog } from "@/shared/dialogs/command-bar/CommandBarDialog";
@@ -124,7 +124,7 @@ export function RemoteAppShell({ children }: RemoteAppShellProps) {
   const isLoadingProjects =
     isSignedIn && !!activeOrganizationId && projectsQuery.isLoading;
 
-  const { data: starCount } = useGitHubStars();
+
   const { hosts: relayHosts } = useRelayAppBarHosts(isSignedIn);
 
   const selectedOrgName =
@@ -283,8 +283,7 @@ export function RemoteAppShell({ children }: RemoteAppShellProps) {
                 onOrgSelect={setSelectedOrgId}
               />
             }
-            starCount={starCount}
-            githubIconPath={siGithub.path}
+
           />
         )}
 
